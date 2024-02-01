@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\media\bgapfo4f\phone-pen-binder.jpg" />
+    <Content Include="wwwroot\media\cpth2fx5\community-front-row.jpg" />
+    <Content Include="wwwroot\media\ekpdgscq\triangle-table-chairs.jpg" />
+    <Content Include="wwwroot\media\f01jqvmq\bluetooth-white-keyboard.jpg" />
+    <Content Include="wwwroot\media\fkadbwt3\umbracoffee-codegarden.jpg" />
+    <Content Include="wwwroot\media\gsnjjwq4\authors.jpg" />
+    <Content Include="wwwroot\media\kfrm2wll\diary.jpg" />
+    <Content Include="wwwroot\media\l0vicqwg\24-days-people-at-codegarden.jpg" />
+    <Content Include="wwwroot\media\lclf3ry1\tutorials.jpg" />
+    <Content Include="wwwroot\media\ljahypfa\chairs-lamps.jpg" />
+    <Content Include="wwwroot\media\n43dfw3o\first-timers-at-codegarden.jpg" />
+    <Content Include="wwwroot\media\oo4jm5ni\candid-contributions.jpg" />
+    <Content Include="wwwroot\media\pcmdjq3h\package-manifest.jpg" />
+    <Content Include="wwwroot\media\q4xbztkq\profile-pic-2023.png" />
+    <Content Include="wwwroot\media\qo0ccbnw\codegarden-keynote.jpg" />
+    <Content Include="wwwroot\media\tu4lsswi\podcast-coffee.jpg" />
+    <Content Include="wwwroot\media\uv2bljv1\meetup-organizers-at-codegarden.jpg" />
+    <Content Include="wwwroot\media\uxcbvbvf\desktop-notebook-glasses.jpg" />
+    <Content Include="wwwroot\media\wvadrxjb\front-row-audience-smiles.jpg" />
+    <Content Include="wwwroot\media\xldnfcwl\friendly-chair.jpg" />
+    <Content Include="wwwroot\media\xu5ome2c\say-cheese.jpg" />
+    <Content Include="wwwroot\media\z4ocpnjy\skrift-at-codegarden.jpg" />
+    <Content Include="wwwroot\media\zgin435m\mastodon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\media\0s1i3qfx\twitter.svg" />
+    <None Include="wwwroot\media\4esfh0cz\square-twitter.svg" />
+    <None Include="wwwroot\media\cyybnb0n\discord.svg" />
+    <None Include="wwwroot\media\iuln540y\paypal.svg" />
+    <None Include="wwwroot\media\mbdjmcj4\github.svg" />
+    <None Include="wwwroot\media\pgaplvty\mastodon.svg" />
+    <None Include="wwwroot\media\pwtlngdw\cc-paypal.svg" />
+    <None Include="wwwroot\media\qwtcc0ic\github-alt.svg" />
+    <None Include="wwwroot\media\tgcltm3u\square-github.svg" />
+    <None Include="wwwroot\media\tj5lysa0\share-nodes.svg" />
+    <None Include="wwwroot\media\ug3ds3ve\umbraco.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Clean" Version="4.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Umbraco.Cms" Version="13.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
+    <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
+    <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\MacroPartials\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- Razor files are needed for the backoffice to work correctly -->
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Remove RazorCompileOnBuild and RazorCompileOnPublish when not using ModelsMode InMemoryAuto -->
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RazorCompileOnPublish>false</RazorCompileOnPublish>
+    <UserSecretsId>20640891-e86b-460d-ac2e-954f4c75874d</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+</Project>
